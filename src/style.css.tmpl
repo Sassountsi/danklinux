@@ -1,3 +1,10 @@
+{{ $root := (toml `
+text = "#f2f2f2"
+hover = "#ff80bf"
+visited = "#bd93f9"
+link = "#8be9fd"
+`) }}
+
 @font-face {
     font-family: Montserrat;
     src: url(./fonts/montserrat-regular.woff2) format('woff2'),
@@ -12,7 +19,7 @@
 }
 
 html {
-    color: #f2f2f2;
+    color: {{$root.text}};
     background-color: #282a36;
     font-family: Montserrat;
 }
@@ -27,16 +34,16 @@ h1 {
 }
 
 a:hover, a:visited:hover {
-  color: #ff80bf;
+  color: {{$root.hover}};
 }
 
 a:visited {
-  color: #bd93f9;
+  color: {{$root.visited}};
 }
 
 a {
   text-decoration: underline;
-  color: #8be9fd;
+  color: {{$root.link}};
 }
 
 *, ::before, ::after {
