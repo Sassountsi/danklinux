@@ -1,0 +1,39 @@
+i@font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Montserrat-Medium.ttf);
+    font-weight: bold;
+}
+
+html {
+    color: #f2f2f2;
+    background-color: #282a36;
+    font-family: Montserrat;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 42rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+a:hover, a:visited:hover {
+  color: #ff80bf;
+}
+a:visited {
+  color: #bd93f9;
+}
+a {
+  text-decoration: underline;
+  color: #8be9fd;
+}
+*, ::before, ::after {
+  box-sizing: border-box;
+}
