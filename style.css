@@ -1,11 +1,13 @@
 @font-face {
     font-family: Montserrat;
-    src: url(./fonts/Montserrat-Regular.ttf);
+    src: url(./fonts/montserrat-regular.woff2) format('woff2'),
+        url(./fonts/montserrat-regular.woff) format('woff');
 }
 
 @font-face {
     font-family: Montserrat;
-    src: url(./fonts/Montserrat-Medium.ttf);
+    src: url(./fonts/montserrat-medium.woff2) format('woff2'),
+        url(./fonts/montserrat-medium.woff) format('woff');
     font-weight: bold;
 }
 
