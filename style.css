@@ -1,4 +1,4 @@
-i@font-face {
+@font-face {
     font-family: Montserrat;
     src: url(./fonts/Montserrat-Regular.ttf);
 }
@@ -27,13 +27,16 @@ h1 {
 a:hover, a:visited:hover {
   color: #ff80bf;
 }
+
 a:visited {
   color: #bd93f9;
 }
+
 a {
   text-decoration: underline;
   color: #8be9fd;
 }
+
 *, ::before, ::after {
   box-sizing: border-box;
 }
