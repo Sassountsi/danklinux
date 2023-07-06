@@ -2,7 +2,7 @@
     "title" "Home"
     "description" "Dank Linux is a group of Linux nerds that believe in open source and free information!"
 -}}
-{{- tpl "start" ( file.Read "templates/start.html.tmpl" ) $root }}
+{{- tpl ( file.Read "templates/start.html.tmpl" ) $root }}
     <h1>DankLinux</h1>
     <p>Dank Linux is a group of Linux nerds that believe in open source and free information!</p>
 {{ file.Read "templates/end.html.tmpl" -}}
