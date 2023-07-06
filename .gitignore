@@ -1,1 +1,4 @@
-/build
+/build/*
+
+!/build/fonts
+!/build/88x31
