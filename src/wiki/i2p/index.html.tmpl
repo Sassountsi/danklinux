@@ -1,0 +1,17 @@
+{{ $root := dict
+    "wiki" "i2p"
+    "page" "index.html"
+    "title" "About"
+    "description" "Setting up i2p is easy and everyone should try it out!"
+    "sections" (coll.Slice "what-is-i2p")
+    "index" 0
+-}}
+{{- tpl ( file.Read "templates/wiki.start.page.html.tmpl" ) $root }}
+    <h1>{{$root.title}}</h1>
+    <hr>
+    <h2 id="what-is-i2p">What is i2p?</h2>
+    <p>
+        I2p is a peer to peer network that is designed for aninimity and start
+        staying safe on the internet!
+    </p>
+{{ file.Read "templates/wiki.end.page.html.tmpl" -}}

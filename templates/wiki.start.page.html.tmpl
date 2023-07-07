@@ -1,0 +1,44 @@
+{{ $start_root := dict
+    "title" (join (coll.Slice "Wiki" .wiki .title) " - ")
+    "description" .description
+-}}
+{{- tpl ( file.Read "templates/start.html.tmpl" ) $start_root }}
+<nav id="wiki-nav">
+    <h2>{{.wiki}} Wiki</h2>
+    {{ $wiki_path := join (coll.Slice "src" "wiki" .wiki ) "/" -}}
+    <ul id="wiki-nav-top">
+    {{ $navs := coll.Slice }}
+    {{ range (file.ReadDir $wiki_path ) }}
+        {{ $navs = coll.Append (regexp.Find "dict\n(\\s*\".*\n)*" ( file.Read (join (coll.Slice $wiki_path . ) "/") ) ) $navs}}
+    {{ end }}
+    {{ tpl ( join (coll.Slice "{{ $navs := coll.Slice (" ( join $navs ") (" ) ")}}" `
+        {{ $navs = coll.Sort "index" $navs }}
+        {{ range $navs}}
+            {{ $wiki_path := join (coll.Slice "wiki" .wiki .page ) "/" -}}
+            <li class="wiki-item">
+                <a href="/{{$wiki_path}}">
+                    {{.title}}
+                </a>
+                <ul>
+                {{ range (.sections) }}
+                <li class="wiki-sub-item">
+                    <a href="/{{$wiki_path}}#{{.}}">
+                        {{$i := 0}}
+                        {{range ( strings.Split "" ( strings.ReplaceAll "-" " " . ) ) }}
+                            {{- if (eq $i 0) -}}
+                                {{- strings.ToUpper . -}}
+                            {{else}}
+                                {{- . -}}
+                            {{end}}
+                            {{- $i = 1 -}}
+                        {{end}}
+                    </a>
+                </li>
+                {{ end }}
+                </ul>
+            </li>
+        {{end}}
+    ` ) "" ) -}}
+    </ul>
+</nav>
+<div id="wiki-body">

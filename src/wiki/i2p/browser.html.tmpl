@@ -1,0 +1,21 @@
+{{ $root := dict
+    "wiki" "i2p"
+    "page" "browser.html"
+    "title" "Browsers"
+    "description" "What browser should you use in i2p?"
+    "sections" (coll.Slice "why-does-browser-matter")
+    "index" 1
+-}}
+{{- tpl ( file.Read "templates/wiki.start.page.html.tmpl" ) $root }}
+    <h1>{{$root.title}}</h1>
+    <hr>
+    <h2 id="why-does-browser-matter">Why does browser matter?</h2>
+    <p>
+        Browsers matter because i2p is just like the clearnet, everything works
+        with html, css, and javascript. Javascript is the scary part as this
+        can work against you and deonanimize you, and help the website find out
+        who you are. There are other ways that i2p servers can try and find out
+        who you are, a privacy centric browser can help minimize these area of
+        attacks.
+    </p>
+{{ file.Read "templates/wiki.end.page.html.tmpl" -}}
