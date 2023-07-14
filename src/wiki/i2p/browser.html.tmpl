@@ -3,12 +3,21 @@
     "page" "browser.html"
     "title" "Browsers"
     "description" "What browser should you use in i2p?"
-    "sections" (coll.Slice "why-does-browser-matter")
+    "sections" (coll.Slice "why-talk-about-browsers" "why-does-browser-matter")
     "index" 1
 -}}
 {{- tpl ( file.Read "templates/wiki.start.page.html.tmpl" ) $root }}
     <h1>{{$root.title}}</h1>
     <hr>
+    <h2 id="why-talk-about-browsers">Why talk about browsers?</h2>
+    <p>
+        The cool thing about i2p is that it is just a proxy. That means that
+        you can use any browser you want with i2p. You could use a browser like
+        like <a href="https://lynx.invisible-island.net/">lynx</a> all the way
+        to <a href="https://www.google.com/chrome/">chrome</a>. This allows
+        anyone to easily use whatever setup they are used to, with i2p, but
+        this is not nessisarily recomended.
+    </p>
     <h2 id="why-does-browser-matter">Why does browser matter?</h2>
     <p>
         Browsers matter because i2p is just like the clearnet, everything works
