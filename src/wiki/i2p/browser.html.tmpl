@@ -3,12 +3,21 @@
     "page" "browser.html"
     "title" "Browsers"
     "description" "What browser should you use in i2p?"
-    "sections" (coll.Slice "why-does-browser-matter")
+    "sections" (coll.Slice "why-talk-about-browsers" "why-does-browser-matter" "browser-comparison")
     "index" 1
 -}}
 {{- tpl ( file.Read "templates/wiki.start.page.html.tmpl" ) $root }}
     <h1>{{$root.title}}</h1>
     <hr>
+    <h2 id="why-talk-about-browsers">Why talk about browsers?</h2>
+    <p>
+        The cool thing about i2p is that it is just a proxy. That means that
+        you can use any browser you want with i2p. You could use a browser like
+        like <a href="https://lynx.invisible-island.net/">lynx</a> all the way
+        to <a href="https://www.google.com/chrome/">chrome</a>. This allows
+        anyone to easily use whatever setup they are used to, with i2p, but
+        this is not nessisarily recomended.
+    </p>
     <h2 id="why-does-browser-matter">Why does browser matter?</h2>
     <p>
         Browsers matter because i2p is just like the clearnet, everything works
@@ -17,5 +26,55 @@
         who you are. There are other ways that i2p servers can try and find out
         who you are, a privacy centric browser can help minimize these area of
         attacks.
+    </p>
+    <h2 id="browser-comparison">Browser comparison</h2>
+    <p>
+        You have such a big range of browsers that you could use, wich so much
+        on the line with each of them, you should want to pick the perfect
+        browser for the job. If you want a complete list of what each browser
+        protects you against you can go to <a href="https://privacytests.org/">
+        privacytests.org</a>.
+    </p>
+    <p>
+        If you go through that site, you should see 4
+        main browsers popout as the most secure. <a href="https://brave.com/">
+        Brave</a>, <a href="https://librewolf.net/">librewolf</a>, <a
+        href="https://mullvad.net/en/download/browser">Mullvad Browser</a>, and
+        <a href="https://www.torproject.org/download/">Tor</a>. I am going to
+        instantly rule out tor as a browser for us as it is meant to be used
+        in the tor network and not the i2p network. These 3 browsers are all
+        browsers I would recomend, for both normal web activity and i2p.
+        I would recomend using a firefox based browser (librewolf / mullvad
+        browser), mainly just because google has activly made the web worse but
+        if you are going to use a chromium based browser use brave.
+    </p>
+    <p>
+        <h3>Librewolf vs Mullvad Browser</h3>
+        You could be wondering what is the difference between librewolf and the
+        mullvad browser. If you want to see in detail what is the differences
+        are then you can go to <a
+        href="https://github.com/mullvad/mullvad-browser/issues/1">
+        /mullvad/mullvad-browser/issues/1</a>, where Thorin (the creator of
+        arkenfox's user.js, and has massivly helped librewolf, tor, and vanilla
+        firefox), talks about the differences between arkenfox's user.js,
+        librewolf, and mullvad browser. He pretty much talks about how the main
+        difference is that librewolf works with the newest version of firefox
+        but mullvad browser is going to be a few versions behind. You might
+        think this makes librewolf the clear winner but because the mullvad
+        browser piggy backs from tor, they get some features that are not in
+        firefox yet. These are patches that are waiting upstream aproval from
+        firefox to impliment. Currently these two have different threat models
+        and have a different way of implimenting security. This still makes
+        the mullvad browser sound like the clear winner but one thing to
+        rememeber is that the mullvad browser has only been out since April
+        2023, while librewolf has been out since March 2020, giving librewolf
+        a good stance as it has been around for a while and has gained a big
+        reputation. This quote from Thorin should explain how the future for
+        privacy browsers will be.
+        <blockquote
+        cite="https://github.com/mullvad/mullvad-browser/issues/1#issuecomment-1495998714">
+        long term I am hoping we can retire arkenfox (I can't speak for LW) and
+        just use MB - but they're just a little too divergent for now
+        </blockquote>
     </p>
 {{ file.Read "templates/wiki.end.page.html.tmpl" -}}
